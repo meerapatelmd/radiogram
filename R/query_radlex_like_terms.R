@@ -7,7 +7,7 @@
 #' @import dplyr
 #' @export
 
-query_radlex_terms <-
+query_radlex_like_terms <-
         function(terms, limit = NULL, concept_name_table = "public.v4_concept_name") {
                 Args <- as.list(terms)
                 if (is.null(limit)) {
