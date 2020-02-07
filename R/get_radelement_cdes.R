@@ -2,14 +2,14 @@
 #' @param code one of RADLEX, LOINC, DICOM, SNOMEDCT
 #' @param elements TRUE if elements are desired.
 #' @import httr
-#' @import jsonlite
+#' @importFrom jsonlite fromJSON
 #' @import purrr
 #' @import rubix
 #' @import centipede
 #' @import dplyr
 #' @export
 
-query_radelement_cdes <-
+get_radelement_cdes <-
         function(search = NULL) {
 
                 if (is.null(search)) {
