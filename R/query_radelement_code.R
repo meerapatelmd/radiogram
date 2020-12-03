@@ -12,13 +12,7 @@
 query_radelement_code <-
         function(code, values = FALSE, elements = TRUE, page = 1) {
 
-                if (centipede::nchar_letter(code) == 0) {
-                        system <- "SNOMEDCT"
-                } else if (grepl("RID", code) == TRUE) {
-                        system <- "RADLEX"
-                } else {
-                        system <- "LOINC"
-                }
+                system <- guess_vocabulary(code)
 
                 if (elements == TRUE) {
                         url <- paste0("https://phpapi.rsna.org/radelement/public/v1/codes/", system, "/", code)
